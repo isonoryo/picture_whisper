@@ -6,6 +6,8 @@
   <thead>
     <tr>
       <th>投稿画像</th>
+      <th>投稿者</th>
+      <th>一言コメント</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,6 +17,7 @@
       <tr>
         <td><%= feed.image %></td>
         <td><%= feed.user.name %></td>
+        <td><%= feed.content %></td>
         <td><%= link_to '投稿画像を見る', feed %></td>
         <td><%= link_to '投稿を編集する', edit_feed_path(feed) %></td>
         <td><%= link_to '投稿画像を削除する', feed, method: :delete, data: { confirm: '削除してもよろしいですか?' } %></td>
