@@ -4,7 +4,7 @@
     <title>PictureWhisper</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -14,14 +14,27 @@
     <%= content_tag(:div,value,class:"#{key}")%>
     <% end %>
 
-    <% if logged_in? %>
-     <%= link_to "Profile", user_path(current_user.id) %>
-     <%= link_to "Logout", session_path(current_user.id), method: :delete %>
-    <% else %>
-     <%= link_to "Sign up", new_user_path %>
-     <%= link_to "Login", new_session_path %>
-    <% end %>
-    
+    <header >
+      <% if logged_in? %>
+        <ul>
+          <li><%= link_to "プロフィール", user_path(current_user.id) %></li>
+          <li><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></li>
+        </ul>
+      <% else %>
+        <ul>
+          <li><%= link_to "新規登録", new_user_path %></li>
+          <li><%= link_to "ログイン", new_session_path %></li>
+        </ul>
+      <% end %>
+    </header>
+
+
     <%= yield %>
+
+      <footer>
+        <p>運営会社I・S・O株式会社</p>
+        <p>© 2019 Copyright DIVE INTO CODE Corp.</p>
+      </footer>
+
   </body>
 </html>

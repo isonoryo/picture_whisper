@@ -1,4 +1,4 @@
-
+<div class="container">
 <h1>投稿画像一覧</h1>
 
 <table>
@@ -13,8 +13,8 @@
 
   <tbody>
     <% @feeds.each do |feed| %>
-      <tr>
-        <td><%= feed.image %></td>
+      <tr class="content">
+        <td><%= image_tag feed.image.to_s %></td>
         <td><%= feed.user.name %></td>
         <td><%= feed.content %></td>
         <td><%= link_to '投稿画像を見る', feed %></td>
@@ -28,3 +28,4 @@
 <br>
 
 <%= link_to '新規投稿', new_feed_path %>
+</div>
