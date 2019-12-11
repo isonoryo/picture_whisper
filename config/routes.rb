@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'feeds#index'
+  root to: 'users#new'
   resources :feeds do
     collection do
       post :confirm
