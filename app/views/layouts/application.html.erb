@@ -19,6 +19,7 @@
         <ul>
           <li><%= link_to "プロフィール", user_path(current_user.id) %></li>
           <li><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></li>
+          <li><%= link_to '投稿一覧へ', feeds_path %></li>
         </ul>
       <% else %>
         <ul>

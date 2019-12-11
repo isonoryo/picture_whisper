@@ -2,7 +2,7 @@
 <%= form_with(model: @feed, url: feeds_path, local: true) do |form| %>
   <!-- 確認画面でアップロードした画像を表示させるための記述 -->
   <%= form.hidden_field :content %>
-  <p>一言コメント：<%= @feed.content %></p>
+  <p>コメント：<%= @feed.content %></p>
   <%= image_tag(@feed.image.url) if @feed.image && @feed.image.url %>
   <%= form.hidden_field :image_cache %>
   <%= form.submit "投稿する" %>

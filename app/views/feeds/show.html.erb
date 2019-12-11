@@ -1,9 +1,10 @@
 <p id="notice"><%= notice %></p>
-
+<div class="content_eria">
 <p>
-  <strong>Image:</strong>
+  <strong>画像:</strong>
   <%= image_tag @feed.image.url %>
 </p>
 
 <%= link_to '編集画面へ', edit_feed_path(@feed) %> |
 <%= link_to '投稿一覧画面へ', feeds_path %>
+</div>
