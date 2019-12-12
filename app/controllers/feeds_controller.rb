@@ -40,7 +40,7 @@ class FeedsController < ApplicationController
     @feed = current_user.feeds.build(feed_params)
     respond_to do |format|
       if @feed.save
-        format.html { redirect_to @feed, notice: '新規投稿が完了しました.' }
+        format.html { redirect_to @feed,  notice: '新規投稿が完了しました.' }
         format.json { render :show, status: :created, location: @feed }
       else
         format.html { render :new }
@@ -54,7 +54,7 @@ class FeedsController < ApplicationController
   def update
     respond_to do |format|
       if @feed.update(feed_params)
-        format.html { redirect_to @feed, notice: '投稿を編集しました.' }
+        format.html { redirect_to @feed, notice: '投稿を編集しました' }
         format.json { render :show, status: :ok, location: @feed }
       else
         format.html { render :edit }
